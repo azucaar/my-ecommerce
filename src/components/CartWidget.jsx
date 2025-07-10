@@ -1,11 +1,10 @@
 import "./carrito.css"
-
-import carrito from "../assets/carrito.png"
+import { FaShoppingCart } from "react-icons/fa";
 
 const CartWidget = () => {
   return (
     <div className="carritodiv">
-        <img className="carrito" src={carrito} alt="" />
+        <FaShoppingCart size={35} color="white"/>
         <h3 className="numero">8</h3>
     </div>
   )

@@ -1,0 +1,32 @@
+.navbar{
+    background-color: rgba(12, 12, 12, 0.801);
+    display: flex;
+    justify-content: space-around;
+    padding:25px ;
+    border-bottom:  5px solid rgb(170, 162, 162);
+}
+
+
+.navbar .logo{
+    width: 100px;
+    height: 100px;
+}
+
+
+.categories{
+    display: flex;
+    align-items: center;
+}
+
+
+.categories li{
+    padding: 0 20px;
+    list-style-type: none;
+    font-size: 23px;
+    color: white;
+}
+
+.categories li:hover{
+border-bottom:  4px solid rgb(170, 162, 162);
+
+}
