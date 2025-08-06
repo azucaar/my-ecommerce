@@ -11,7 +11,14 @@ const Cart = () => {
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Tu carrito</h2>
 
         {cart.length === 0 ? (
-          <p className="text-gray-500 text-lg text-center">El carrito está vacío.</p>
+          <div className="text-center mt-8 space-y-4">
+            <p className="text-gray-500 text-lg">El carrito está vacío.</p>
+            <Link to="/">
+              <button className="px-6 py-3 bg-yellow-500 text-white rounded hover:bg-yellow-300">
+                Volver al inicio
+              </button>
+            </Link>
+          </div>
         ) : (
           <>
             <div className="space-y-6">

@@ -1,6 +1,6 @@
 import "../NavBar/navbar.css"
 import { GiStakeHammer } from "react-icons/gi";
-import CartWidget from "../CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {

@@ -1,20 +1,21 @@
 import ItemCount from '../ItemCount/ItemCount'
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ product = {} }) => {
-const {addProductInCart} = useContext(CartContext);
+  const { addProductInCart } = useContext(CartContext);
+  const [EstaCarrito, setEstaCarrito] = useState(false);
 
-  const addProduct =(quantity) =>{
-    const productCart = {...product, quantity};
+  const addProduct = (quantity) => {
+    const productCart = { ...product, quantity };
     addProductInCart(productCart);
+    setEstaCarrito(true);
   };
-
 
   return (
     <div className="flex justify-center px-4 py-10 bg-white">
       <div className="flex flex-col lg:flex-row gap-10 max-w-5xl w-full items-start">
-    
         <div className="w-full lg:w-1/2">
           <img
             src={product.image}
@@ -32,9 +33,17 @@ const {addProductInCart} = useContext(CartContext);
             <p className="text-sm text-gray-500 mb-6">Stock disponible: {product.stock}</p>
           </div>
 
-          
+
           <div>
-            <ItemCount stock={product.stock} addProduct={addProduct} />
+            {!EstaCarrito ? (
+              <ItemCount stock={product.stock} addProduct={addProduct} />
+            ) : (
+              <Link to="/cart">
+                <button className="px-6 py-3 bg-green-500 text-white rounded hover:bg-green-300 transition">
+                  Ir al carrito
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
