@@ -10,7 +10,10 @@ const handleClickDecrement=()=>{
 };
 
 const handleClickIncrement = () =>{
+  if(count < stock){
     setCount(count +1);
+
+  }
 };
 
   return (
